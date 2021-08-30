@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "allowJs": false, // 是否编辑js文件
+    "baseUrl": ".",
+    "experimentalDecorators": true, // 启动装饰器
+    "removeComments": false, // 删除注释
+    "resolveJsonModule": true, // 加载json
+    "outDir": "./dist", // 输出目录
+    "target": "esnext", // 编译目标
+    "module": "esnext", // 模块类型
+    "moduleResolution": "node",
+    "jsx": "preserve",
+    "sourceMap": true,
+    "lib": ["esnext", "dom"],  // 导入库类型定义
+    "types": ["node"], // 导入指定类型包
+    "plugins": [{ "name": "@vuedx/typescript-plugin-vue" }],
+    "strictFunctionTypes": false, // 处理 Debug Failure. No error for last overload signature 问题
+    // 这块生成声明文件有问题，类型文件可能需要像element-plus那样单独通过gen-type.js去生成
+    // "declaration": true, // 生成定义文件
+    // "declarationMap": false, // 生成定义sourceMap
+    // "declarationDir": "./lib/types", // 定义文件输出目录
+
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    }
+  },
+  "include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "exclude": [
+    "lib",
+    "dist",
+    "node_modules"
+  ],
+}
